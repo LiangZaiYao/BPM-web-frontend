@@ -10,6 +10,7 @@ import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
+import HumanAnalysis from "@/pages/HumanAnalysis.vue";
 
 const routes = [
   {
@@ -17,6 +18,11 @@ const routes = [
     component: DashboardLayout,
     redirect: "/dashboard",
     children: [
+      {
+        path: "human-analysis",
+        name: "human-analysis",
+        component: HumanAnalysis
+      },
       {
         path: "dashboard",
         name: "dashboard",
