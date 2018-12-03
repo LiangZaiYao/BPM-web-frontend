@@ -111,6 +111,7 @@
     ]
   },
   "sidebar": {
+    "humanAnalysis": "Human Analysis",
     "title": "Creative Tim",
     "shortTitle": "CT",
     "dashboard": "dashboard",

@@ -3,16 +3,16 @@
     <h5 slot="header" class="title">Edit Profile</h5>
     <div class="row">
       <div class="col-md-5 pr-md-1">
-        <base-input label="Company (disabled)"
+        <base-input label="Company"
                   placeholder="Company"
-                  v-model="model.company"
-                  disabled>
+                  v-model="model.company">
         </base-input>
       </div>
       <div class="col-md-3 px-md-1">
         <base-input label="Username"
                   placeholder="Username"
-                  v-model="model.username">
+                  v-model="model.username"
+                  disabled>
         </base-input>
       </div>
       <div class="col-md-4 pl-md-1">

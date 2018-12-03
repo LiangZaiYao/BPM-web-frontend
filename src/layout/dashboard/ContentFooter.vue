@@ -3,25 +3,13 @@
     <div class="container-fluid">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="http://www.creative-tim.com">
-            Creative Tim
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://blog.creative-tim.com">
-            Blog
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://www.creative-tim.com/license">
-            Licenses
+          <a class="nav-link" href="http://www.google.com">
+            ADC - eCard
           </a>
         </li>
       </ul>
       <div class="copyright">
-        © {{year}} made with <i class="tim-icons icon-heart-2"></i> by
-        <a href="https://www.binarcode.com" target="_blank">Binar Code</a>&nbsp;&
-        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+        © {{year}} made by ADC lab
       </div>
     </div>
   </footer>
@@ -30,7 +18,7 @@
   export default {
     data() {
       return {
-        year: new Date().getFullYear()
+        year: 2018
       }
     }
   };
