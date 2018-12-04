@@ -1,7 +1,9 @@
 import Vue from "vue";
 import App from "./App";
 import router from "./router/index";
-import APIUtil from "./services/APIUtil"
+import APIUtil from "./services/APIUtil";
+import axios from 'axios';
+import VueAxios from "Vue-axios";
 
 import BlackDashboard from "./plugins/blackDashboard";
 import i18n from "./i18n"

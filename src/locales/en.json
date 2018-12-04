@@ -111,14 +111,14 @@
     ]
   },
   "sidebar": {
-    "humanAnalysis": "Human Analysis",
+    "humanAnalysis": "人脉分析",
     "title": "Creative Tim",
     "shortTitle": "CT",
     "dashboard": "dashboard",
     "icons": "Icons",
     "maps": "Maps",
     "notifications": "Notifications",
-    "userProfile": "User Profile",
+    "userProfile": "我的资料",
     "tableList": "Table List",
     "typography": "Typography",
     "rtlSupport": "RTL Support"

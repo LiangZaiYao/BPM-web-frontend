@@ -6,7 +6,7 @@ export default {
    * 初始化Axios
    */
   init () {
-    Vue.axios.defaults.baseURL = 'http://47.107.241.57:8080/Entity/U1c365fdb24129c/hospital/'
+    Vue.axios.defaults.baseURL = 'http://120.78.91.122:8080/Entity/U63b066a193a12/ADC_eCard/'
     Vue.axios.defaults.headers.post['Content-Type'] = 'application/json'
     Vue.axios.defaults.timeout = 5000
   },
