@@ -58,7 +58,7 @@
         </base-input>
       </div>
     </div>
-    <base-button slot="footer" type="primary" fill v-on="onSave">Save</base-button>
+    <base-button slot="footer" type="primary" fill @click="onSave">Save</base-button>
   </card>
 </template>
 <script>
@@ -71,8 +71,9 @@
         }
       },
       methods: {
-        onSave() {
+        onSave:function () {
           // save personal info
+          this.$toasted.show("good")
         }
       },
       mounted() {

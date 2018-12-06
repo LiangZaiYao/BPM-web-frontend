@@ -10,7 +10,10 @@ import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
-import HumanAnalysis from "@/pages/HumanAnalysis.vue";
+import HumanAnalysis from "@/pages/HumanAnalysis/HumanAnalysis.vue";
+import Login from "@/pages/Auth/Login.vue";
+import SignUp from "@/pages/Auth/SignUp.vue";
+import FriendZone from "@/pages/FriendZone/FriendZone";
 
 const routes = [
   {
@@ -27,6 +30,11 @@ const routes = [
         path: "dashboard",
         name: "dashboard",
         component: Dashboard
+      },
+      {
+        path: "friend-zone",
+        name: "friend-zone",
+        component: FriendZone
       },
       {
         path: "profile",
@@ -60,7 +68,19 @@ const routes = [
       }
     ]
   },
-  { path: "*", component: NotFound },
+  { path: "*",
+    component: NotFound
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: Login
+  },
+  {
+    path: "/signup",
+    name: "signup",
+    component: SignUp
+  },
 ];
 
 /**

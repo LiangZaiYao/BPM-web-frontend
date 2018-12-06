@@ -8,7 +8,7 @@
         <card type="chart">
           <template slot="header">
             <div class="row">
-              <div class="col-sm-6" :class="text-left">
+              <div class="col-sm-6">
                 <h5 class="card-category">{{"8012年"}}</h5>
                 <h3 class="card-title">{{"新增名片数量"}}</h3>
               </div>
@@ -16,15 +16,17 @@
           </template>
           <div class="chart-area">
             <line-chart style="height: 100%"
-                        :chart-data="purpleLineChart.chartData"
-                        :gradient-colors="purpleLineChart.gradientColors"
-                        :gradient-stops="purpleLineChart.gradientStops"
-                        :extra-options="purpleLineChart.extraOptions">
+                        ref="lineChart1"
+                        :chart-data="LineChart1.chartData"
+                        :gradient-colors="LineChart1.gradientColors"
+                        :gradient-stops="LineChart1.gradientStops"
+                        :extra-options="LineChart1.extraOptions">
             </line-chart>
           </div>
         </card>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -33,6 +35,7 @@
   import LineChart from '@/components/Charts/LineChart';
   import APIUtil from '@/services/APIUtil';
   import config from '@/config';
+  import Vue from 'vue';
   import * as chartConfigs from '@/components/Charts/config';
 
 
@@ -45,11 +48,10 @@
     data() {
       return {
         MonthLabels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-        testData: '',
-        purpleLineChart: {
+        LineChart1: {
           extraOptions: chartConfigs.purpleChartOptions,
           chartData: {
-            labels: null, //TODO needs to be inited
+            labels: null,
             datasets: [{
               label: "Data",
               fill: true,
@@ -73,7 +75,7 @@
       }
     },
     methods: {
-      getSixMonthLabels() {
+      getSixMonthLabels: function() {
         var thisMonth = new Date().getMonth();
         var labels = [];
         for(var i = (thisMonth-6); i < thisMonth; i ++){
@@ -81,20 +83,26 @@
         }
         return labels;
       },
-      initChart() {
-        this.purpleLineChart.chartData.labels = this.getSixMonthLabels();
+      initChart: function() {
+        this.LineChart1.chartData.labels = this.getSixMonthLabels();
+      },
+      loadData: function () {
+        APIUtil.get('/User'
+        ).then(data => {
+          console.log(data.toString())
+        }).catch(() => {
+          this.showToast('读取信息失败')
+        }).finally(() => {
+          // do nothing
+        });
       }
     },
-    mounted() {
+    created() {
+      // 必须在图表渲染前就初始化好……
       this.initChart()
-      APIUtil.get('/User'
-      ).then(data => {
-        this.testData = data.toString()
-      }).catch(() => {
-        this.showToast('读取信息失败')
-      }).finally(() => {
-        // do nothing
-      });
+    },
+    mounted() {
+
     }
 
     }

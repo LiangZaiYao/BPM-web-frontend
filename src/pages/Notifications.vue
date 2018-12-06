@@ -110,7 +110,7 @@
           horizontalAlign: horizontalAlign,
           verticalAlign: verticalAlign,
           type: this.type[color],
-          timeout: 0
+          timeout: 1000 //提示消失的时间，若为0则一直保留
         });
       }
     }
