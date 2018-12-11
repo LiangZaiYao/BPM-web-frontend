@@ -25,7 +25,7 @@
       </div>
       <div class="col-md-4 px-md-1">
         <base-input label="Phone Number"
-                  v-model="info.phone_number"
+                  v-model="info.phoneNumber"
                   placeholder="Phone Number">
         </base-input>
       </div>
@@ -62,6 +62,8 @@
   </card>
 </template>
 <script>
+  import APIUtil from '@/services/APIUtil';
+
   export default {
     props: {
       info: {
@@ -70,22 +72,41 @@
           return {};
         }
       },
-      methods: {
-        onSave:function () {
-          // save personal info
-          this.$toasted.show("good")
-        }
-      },
-      mounted() {
-        APIUtil.get('/Card/?name=1'
-        ).then(data => {
-          this.info = data
+    },
+    data() {
+      return {
+
+      }
+    },
+    methods: {
+      onSave: function() {
+        // save personal info
+        console.log(this.info)
+        console.log(sessionStorage)
+        APIUtil.post('/UserCard/?Usercard.name='+sessionStorage.userName,this.info
+        ).then(response => {
+          console.log(response)
         }).catch(() => {
-          this.showToast(this.$t('读取信息失败'))
+          this.showToast('保存失败')
         }).finally(() => {
           // do nothing
         })
-      }
+      },
+      loadInfo: function() {
+        // TODO
+        APIUtil.get('/UserCard/?Usercard.User.name='+sessionStorage.userName
+        ).then(data => {
+          console.log(data)
+          this.info = data
+        }).catch(() => {
+          this.showToast('读取信息失败')
+        }).finally(() => {
+          // do nothing
+        })
+      },
+    },
+    mounted() {
+      this.loadInfo()
     }
   }
 </script>

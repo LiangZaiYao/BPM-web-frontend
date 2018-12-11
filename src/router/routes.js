@@ -11,9 +11,11 @@ import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
 import HumanAnalysis from "@/pages/HumanAnalysis/HumanAnalysis.vue";
+import FriendZone from "@/pages/FriendZone/FriendZone";
+
+// Auth pages
 import Login from "@/pages/Auth/Login.vue";
 import SignUp from "@/pages/Auth/SignUp.vue";
-import FriendZone from "@/pages/FriendZone/FriendZone";
 
 const routes = [
   {

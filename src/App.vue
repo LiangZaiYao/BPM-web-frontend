@@ -24,10 +24,17 @@
     },
     computed: {
       needAuth () {
-        if (this.$route.path === '/') {
+        // if (this.$route.path === '/') {
+        //   return true
+        // } else {
+        //   return this.$route.path.match('auth')
+        // }
+
+        if (sessionStorage.userName === null){
           return true
-        } else {
-          return this.$route.path.match('auth')
+        }
+        else {
+          return false
         }
       }
     },

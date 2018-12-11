@@ -57,10 +57,11 @@
         APIUtil.get('/User/?User.user_name='+this.userData.user_name
         ).then(response =>{
             if (response.data !== undefined) {
-              var hhhh = response.data.User[0]
-              if (this.userData.user_pwd === hhhh.user_pwd) {
+              var body = response.data.User[0]
+              if (this.userData.user_pwd === body.user_pwd) {
                 console.log("登陆成功")
                 //TODO: 跳转到主页
+                sessionStorage.userName = body.user_name
                 this.$router.push({
                   path: '/',
                 })

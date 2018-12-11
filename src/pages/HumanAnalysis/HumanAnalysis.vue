@@ -1,15 +1,31 @@
 <template>
   <div>
-    <div class="row">
-      <div>{{testData}}</div>
-    </div>
+
     <div class="row">
       <div class="col-12">
         <card type="chart">
           <template slot="header">
             <div class="row">
               <div class="col-sm-6">
-                <h5 class="card-category">{{"8012年"}}</h5>
+                <h5 class="card-category">{{now.getFullYear()+'年'}}</h5>
+                <h3 class="card-title">{{"人脉关系图"}}</h3>
+              </div>
+            </div>
+          </template>
+          <div class="netChart-area">
+            <d3-network :net-nodes="netChart.nodes" :net-links="netChart.links" :options="netChart.options"/>
+          </div>
+        </card>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <card type="chart">
+          <template slot="header">
+            <div class="row">
+              <div class="col-sm-6">
+                <h5 class="card-category">{{now.getFullYear()+'年'}}</h5>
                 <h3 class="card-title">{{"新增名片数量"}}</h3>
               </div>
             </div>
@@ -37,16 +53,19 @@
   import config from '@/config';
   import Vue from 'vue';
   import * as chartConfigs from '@/components/Charts/config';
+  import D3Network from 'vue-d3-network'
 
 
   export default {
     name: "human-analysis",
     components: {
       BarChart,
-      LineChart
+      LineChart,
+      D3Network
     },
     data() {
       return {
+        now: Date,
         MonthLabels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
         LineChart1: {
           extraOptions: chartConfigs.purpleChartOptions,
@@ -72,6 +91,43 @@
           gradientColors: config.colors.primaryGradient,
           gradientStops: [1, 0.2, 0],
         },
+        netChart: {
+          nodes: [
+            { id: 1, name: 'myself' ,_size: '40'},
+            { id: 2 },
+            { id: 3 },
+            { id: 4 },
+            { id: 5 },
+            { id: 6 },
+            { id: 7 },
+            { id: 8 },
+            { id: 9 }
+          ],
+          links: [
+            { sid: 1, tid: 2, _color:'red'},
+            { sid: 2, tid: 8, _color:'f0f' },
+            { sid: 3, tid: 4,_color:'rebeccapurple' },
+            { sid: 4, tid: 5 },
+            { sid: 5, tid: 6 },
+            { sid: 7, tid: 8 },
+            { sid: 5, tid: 8 },
+            { sid: 3, tid: 8 },
+            { sid: 7, tid: 9 },
+            { sid: 9, tid: 1 }
+          ],
+          options:
+            {
+              force: 4000,
+              nodeSize: 20,
+              nodeLabels: true,
+              linkLabels: true,
+              linkWidth:5,
+              offset:{
+                x:-50,
+                y:-50,
+              }
+            }
+        }
       }
     },
     methods: {
@@ -84,17 +140,11 @@
         return labels;
       },
       initChart: function() {
+        this.now = new Date()
         this.LineChart1.chartData.labels = this.getSixMonthLabels();
       },
       loadData: function () {
-        APIUtil.get('/User'
-        ).then(data => {
-          console.log(data.toString())
-        }).catch(() => {
-          this.showToast('读取信息失败')
-        }).finally(() => {
-          // do nothing
-        });
+
       }
     },
     created() {
@@ -102,12 +152,12 @@
       this.initChart()
     },
     mounted() {
-
+      this.loadData()
     }
 
     }
 </script>
 
 <style scoped>
-
+ @import "../../assets/css/vue-d3-network.css";
 </style>
