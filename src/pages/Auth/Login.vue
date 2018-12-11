@@ -62,13 +62,16 @@
                 console.log("登陆成功")
                 //TODO: 跳转到主页
                 sessionStorage.userName = body.user_name
+                sessionStorage.userId = body.id
                 this.$router.push({
                   path: '/',
                 })
               } else {
+                alert("密码不正确")
                 console.log("密码不正确")
               }
             } else {
+              alert("用户不存在")
               console.log("用户不存在")
             }
           }
