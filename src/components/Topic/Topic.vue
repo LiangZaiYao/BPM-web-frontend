@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-12">
+    <div class="col-lg-10 col-md-12">
       <card>
         <template slot="header">
           <div class="row">
@@ -11,11 +11,13 @@
           </div>
         </template>
         <div class="row">
-          <div class="col-8">
+          <div class="col-12">
             <h5>话题：</h5><h3>{{text}}</h3>
           </div>
-          <div class="col-4">
-            <img :src="image"/>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6" v-for="image in images">
+            <img :src="image" class="topic-images">
           </div>
         </div>
       </card>
@@ -30,7 +32,7 @@
       text: String,
       time: String,
       author: String,
-      image: String
+      images: Array,
     },
     data(){
       return {
@@ -47,5 +49,7 @@
 </script>
 
 <style scoped>
-
+  .topic-images {
+    height: 120px;
+  }
 </style>

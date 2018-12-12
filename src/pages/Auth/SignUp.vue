@@ -60,16 +60,16 @@
           }
         )
 
-        // APIUtil.post('/User',this.userData
-        // ).then(response => {
-        //   if (response.status === 200) {
-        //     console.log("注册成功")
-        //   }
-        // }).catch(() => {
-        //   console.log("注册失败")
-        // }).finally(() => {
-        //   // do nothing
-        // });
+        APIUtil.post('/User',this.userData
+        ).then(response => {
+          if (response.status === 200) {
+            console.log("注册成功")
+          }
+        }).catch(() => {
+          console.log("注册失败")
+        }).finally(() => {
+          // do nothing
+        });
 
       }
     }

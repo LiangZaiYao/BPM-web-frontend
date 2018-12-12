@@ -38,7 +38,6 @@
 </template>
 
 <script>
-  import config from '@/config';
   import APIUtil from '@/services/APIUtil';
 
 

@@ -13,15 +13,16 @@
       </section>
     </div>
 
-    <section v-if="files.length !== 0" class="upload-func">
-      <div class="progress-bar">
-        <section v-if="uploading" :width="(percent * 100) + '%'">{{(percent * 100) + '%'}}</section>
-      </div>
-      <div class="operation-box">
-        <button v-if="status === 'ready'" @click="submit">上传</button>
-        <button v-if="status === 'finished'" @click="finished">完成</button>
-      </div>
-    </section>
+    <!--<section v-if="files.length !== 0" class="upload-func">-->
+      <!--<div class="progress-bar">-->
+        <!--<section v-if="uploading" :width="(percent * 100) + '%'">{{(percent * 100) + '%'}}</section>-->
+      <!--</div>-->
+      <!--<div class="operation-box">-->
+        <!--<button v-if="status === 'ready'" @click="submit">上传</button>-->
+        <!--<button v-if="status === 'finished'" @click="finished">完成</button>-->
+      <!--</div>-->
+    <!--</section>-->
+
     <input type="file" accept="image/*" @change="fileChanged" ref="file" multiple="multiple">
   </div>
 </template>
