@@ -7,6 +7,13 @@ import VueAxios from "Vue-axios";
 
 import BlackDashboard from "./plugins/blackDashboard";
 import i18n from "./i18n"
+import VueFab from 'vue-float-action-button'
+
+// Vue.use(VueFab,  {
+//   // default global options
+//   spacing: 40, // 子菜单间距
+//   delay: 0.1 // 子菜单动画延迟
+// } )
 Vue.use(BlackDashboard);
 Vue.use(VueAxios, axios);
 

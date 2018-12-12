@@ -105,6 +105,7 @@
           ],
           links: [
             { sid: 1, tid: 2, _color:'red'},
+            { sid: 1, tid: 8 },
             { sid: 2, tid: 8, _color:'f0f' },
             { sid: 3, tid: 4,_color:'rebeccapurple' },
             { sid: 4, tid: 5 },

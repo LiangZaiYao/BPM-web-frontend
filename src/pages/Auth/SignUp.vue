@@ -35,7 +35,6 @@
 <script>
   import config from '@/config';
   import APIUtil from '@/services/APIUtil';
-  import Notify from '@/services/Notify';
 
   export default {
     name: "SignUp",
@@ -56,7 +55,7 @@
         APIUtil.get('/User/?User.user_name='+this.userData.user_name
         ).then(response =>{
           if (response !== {}) {
-            Notify.notifyFail()
+            alert("用户已存在")
           }
           }
         )

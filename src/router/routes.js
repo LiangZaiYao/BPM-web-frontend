@@ -11,7 +11,8 @@ import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
 import HumanAnalysis from "@/pages/HumanAnalysis/HumanAnalysis.vue";
-import FriendZone from "@/pages/FriendZone/FriendZone";
+import Topics from "@/pages/Topics/Topics";
+import EditTopic from "@/pages/Topics/EditTopic";
 
 // Auth pages
 import Login from "@/pages/Auth/Login.vue";
@@ -34,9 +35,14 @@ const routes = [
         component: Dashboard
       },
       {
-        path: "friend-zone",
-        name: "friend-zone",
-        component: FriendZone
+        path: "topics",
+        name: "topics",
+        component: Topics
+      },
+      {
+        path: "edit-topic",
+        name: "edit-topic",
+        component: EditTopic
       },
       {
         path: "profile",
