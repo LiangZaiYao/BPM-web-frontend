@@ -93,28 +93,27 @@
         },
         netChart: {
           nodes: [
-            { id: 1, name: 'myself' ,_size: '40'},
-            { id: 2 },
-            { id: 3 },
-            { id: 4 },
-            { id: 5 },
-            { id: 6 },
-            { id: 7 },
-            { id: 8 },
-            { id: 9 }
+            // { id: 1, name: 'myself' ,_size: '40'},
+            // { id: 2 },
+            // { id: 4 },
+            // { id: 5 },
+            // { id: 6 },
+            // { id: 7 },
+            // { id: 8 },
+            // { id: 9 }
           ],
           links: [
-            { sid: 1, tid: 2, _color:'red'},
-            { sid: 1, tid: 8 },
-            { sid: 2, tid: 8, _color:'f0f' },
-            { sid: 3, tid: 4,_color:'rebeccapurple' },
-            { sid: 4, tid: 5 },
-            { sid: 5, tid: 6 },
-            { sid: 7, tid: 8 },
-            { sid: 5, tid: 8 },
-            { sid: 3, tid: 8 },
-            { sid: 7, tid: 9 },
-            { sid: 9, tid: 1 }
+            // { sid: 1, tid: 2, _color:'red'},
+            // { sid: 2, tid: 1 },
+            // { sid: 2, tid: 8, _color:'f0f' },
+            // { sid: 3, tid: 4,_color:'rebeccapurple' },
+            // { sid: 4, tid: 5 },
+            // { sid: 5, tid: 6 },
+            // { sid: 7, tid: 8 },
+            // { sid: 5, tid: 8 },
+            // { sid: 3, tid: 8 },
+            // { sid: 7, tid: 9 },
+            // { sid: 9, tid: 1 }
           ],
           options:
             {
@@ -144,8 +143,34 @@
         this.now = new Date()
         this.LineChart1.chartData.labels = this.getSixMonthLabels();
       },
-      loadData: function () {
+      loadNetData: function () {
+        APIUtil.get('/Friendmap/'+ sessionStorage.userId
+        ).then(response => {
+          var root = response.data.root
+          var map  = response.data.userMaps
+          // 加载节点nodes
+          for (var i = 0; i < map.length ; i++){
+            if( map[i].user.id === root.id){
+              this.netChart.nodes.push({id: map[i].user.id, name: map[i].user.user_name + '(我)', _size: '40'})//将root设置为本人节点
+            }
+            else{
+              this.netChart.nodes.push({id: map[i].user.id, name: map[i].user.user_name})
+            }
+          }
+          // endof 加载节点nodes
 
+          // 加载边links
+          console.log(map)
+          for(var j = 0; j < map.length; j++){
+            for (var k = 0; k < map[j].friends.length; k++){
+              this.netChart.links.push({sid: map[j].user.id, tid: map[j].friends[k].id})
+              // console.log("s:"+ map[j].user.user_name+ ", t:" + map[j].friends[k].user_name)
+            }
+          }
+          // endof 加载遍links
+        }).catch(() => {
+          console.log('关系图数据读取失败')
+        })
       }
     },
     created() {
@@ -153,7 +178,7 @@
       this.initChart()
     },
     mounted() {
-      this.loadData()
+      this.loadNetData()
     }
 
     }

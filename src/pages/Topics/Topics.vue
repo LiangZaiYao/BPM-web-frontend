@@ -99,7 +99,7 @@
                 topicToPush.time = result.data.Topic[b].create_time
                 topicToPush.image = result.data.Topic[b].id
                 this.topicList.push(topicToPush)
-                // 开始读取关联的图片⬇
+                // 开始读取关联的图片⬇ //骚操作导致这些不用了
                 // APIUtil.get('/File/'+result.data.Topic[b].id
                 // ).then(response => {
                 //   topicToPush.image = response
