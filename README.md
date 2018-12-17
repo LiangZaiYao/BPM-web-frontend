@@ -1,4 +1,4 @@
-# Template :
+# BPM-web-frontend’s Template
 # [Vue-Black Dashboard](https://demos.creative-tim.com/vue-black-dashboard) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=Black%20Dashboard%20by%20Creative%20Tim&url=https%3A%2F%2Fdemos.creative-tim.com%2Fblack-dashboard%2Fexamples%2Fdashboard.html&via=CreativeTim)
 
 
@@ -79,7 +79,3 @@ If you have questions or need help integrating the product please [contact us](h
 - [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
 - [Freebies](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
 - [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
-
-
-
-#BPM-web-frontend
