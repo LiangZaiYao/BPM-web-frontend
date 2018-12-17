@@ -121,7 +121,7 @@
           })
         }
         else {          // 如果已经有个人信息，则使用put进行修改
-          APIUtil.get('Usercard/?Usercard.user.id=' + sessionStorage.userId
+          APIUtil.get('/Usercard/?Usercard.user.id=' + sessionStorage.userId
           ).then(response => {
             cardId = response.data.Usercard[0].card.id
           }).catch(() => {
@@ -140,8 +140,7 @@
       },
       loadInfo: function () {
         this.user_name = sessionStorage.userName
-        APIUtil.get('/UserCard/?Usercard.user.id=' + sessionStorage.userId
-          // APIUtil.get('/UserCard/?Usercard.user.id=1544099676976'
+        APIUtil.get('/Usercard/?Usercard.user.id=' + sessionStorage.userId
         ).then(response => {
           if (this.isEmptyObject(response.data)) {
             // 没有个人信息的情况

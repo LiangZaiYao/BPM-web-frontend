@@ -7,7 +7,6 @@ import VueAxios from "Vue-axios";
 
 import BlackDashboard from "./plugins/blackDashboard";
 import i18n from "./i18n"
-import VueFab from 'vue-float-action-button'
 
 // Vue.use(VueFab,  {
 //   // default global options

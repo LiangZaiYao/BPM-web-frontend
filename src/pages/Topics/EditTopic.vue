@@ -51,7 +51,7 @@
           text: '',
           user_id: '',
           create_time: 0,
-          image: '-useless'
+          image: ''
         },
       }
     },
@@ -70,10 +70,13 @@
         ).then(response => {
           topicId = response.data.id
           // Topic实体创建好之后根据Topic的id，关联一个文件（FormData）
-          APIUtil.post('/Topic/'+topicId, this.formData_pic
+          APIUtil.post('/Uploadpic/'+topicId, this.formData_pic
           ).then(response => {
             console.log(response)
             alert("话题发布成功！")
+            this.$router.push({
+              path: 'topics',
+            })
           }).catch(() => {
             console.log('图片表单数据关联失败')
           })

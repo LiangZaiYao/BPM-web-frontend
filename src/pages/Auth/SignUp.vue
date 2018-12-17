@@ -40,27 +40,26 @@
     name: "SignUp",
     data() {
       return {
-        userData:{
+        userData: {
           user_name: '',
           user_pwd: '',
           role: 'common',
         }
       }
     },
-    computed: {
-
-    },
+    computed: {},
     methods: {
-      onSignUp: function() {
-        APIUtil.get('/User/?User.user_name='+this.userData.user_name
-        ).then(response =>{
-          if (response !== {}) {
+      onSignUp: function () {
+        APIUtil.get('/User/?User.user_name=' + this.userData.user_name
+        ).then(response => {
+          console.log(response)
+          if ( ! this.isEmptyObject(response)) {
             alert("用户已存在")
+            return
           }
-          }
-        )
+        })
 
-        APIUtil.post('/User',this.userData
+        APIUtil.post('/User', this.userData
         ).then(response => {
           if (response.status === 200) {
             console.log("注册成功")
@@ -72,7 +71,13 @@
         });
 
       }
-    }
+    },
+    isEmptyObject: function (obj) {
+      for (var key in obj) {
+        return false;//返回false，不为空对象
+      }
+      return true;//返回true，为空对象
+    },
   }
 </script>
 
