@@ -1,3 +1,4 @@
+# Template :
 # [Vue-Black Dashboard](https://demos.creative-tim.com/vue-black-dashboard) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=Black%20Dashboard%20by%20Creative%20Tim&url=https%3A%2F%2Fdemos.creative-tim.com%2Fblack-dashboard%2Fexamples%2Fdashboard.html&via=CreativeTim)
 
 
@@ -49,113 +50,6 @@ We are very excited to share this dashboard with you and we look forward to hear
 ## Documentation
 The documentation for the Vue Black Dashboard is hosted at our [website](https://demos.creative-tim.com/vue-black-dashboard/documentation).
 
-
-## File Structure
-Within the download you'll find the following directories and files:
-
-```
-|-- Vue Black Dashboard
-    |-- .babelrc
-    |-- .env
-    |-- .eslintrc
-    |-- .gitattributes
-    |-- .gitignore
-    |-- CHANGELOG.md
-    |-- CONTRIBUTING.md
-    |-- LICENSE.md
-    |-- README.md
-    |-- package.json
-    |-- vue.config.js
-    |-- src
-        |-- App.vue
-        |-- i18n.js
-        |-- main.js
-        |-- assets
-        |   |-- css
-        |   |   |-- nucleo-icons.css
-        |   |-- demo
-        |   |   |-- demo.css
-        |   |-- fonts
-        |   |   |-- nucleo.eot
-        |   |   |-- nucleo.ttf
-        |   |   |-- nucleo.woff
-        |   |   |-- nucleo.woff2
-        |   |-- sass
-        |       |-- black-dashboard.scss
-        |       |-- black-dashboard
-        |           |-- bootstrap
-        |           |-- custom
-        |           |-- plugins
-        |-- components
-        |   |-- BaseAlert.vue
-        |   |-- BaseButton.vue
-        |   |-- BaseCheckbox.vue
-        |   |-- BaseDropdown.vue
-        |   |-- BaseNav.vue
-        |   |-- BaseTable.vue
-        |   |-- CloseButton.vue
-        |   |-- Modal.vue
-        |   |-- NavbarToggleButton.vue
-        |   |-- index.js
-        |   |-- Cards
-        |   |   |-- Card.vue
-        |   |   |-- StatsCard.vue
-        |   |-- Charts
-        |   |   |-- BarChart.js
-        |   |   |-- LineChart.js
-        |   |   |-- config.js
-        |   |   |-- utils.js
-        |   |-- Inputs
-        |   |   |-- BaseInput.vue
-        |   |-- NotificationPlugin
-        |   |   |-- Notification.vue
-        |   |   |-- Notifications.vue
-        |   |   |-- index.js
-        |   |-- SidebarPlugin
-        |       |-- SideBar.vue
-        |       |-- SidebarLink.vue
-        |       |-- index.js
-        |-- directives
-        |   |-- click-ouside.js
-        |-- layout
-        |   |-- dashboard
-        |       |-- Content.vue
-        |       |-- ContentFooter.vue
-        |       |-- DashboardLayout.vue
-        |       |-- MobileMenu.vue
-        |       |-- SidebarSharePlugin.vue
-        |       |-- TopNavbar.vue
-        |-- locales
-        |   |-- ar.json
-        |   |-- en.json
-        |-- pages
-        |   |-- Dashboard.vue
-        |   |-- Icons.vue
-        |   |-- Maps.vue
-        |   |-- NotFoundPage.vue
-        |   |-- Notifications.vue
-        |   |-- Profile.vue
-        |   |-- TableList.vue
-        |   |-- Typography.vue
-        |   |-- Dashboard
-        |   |   |-- TaskList.vue
-        |   |   |-- UserTable.vue
-        |   |-- Notifications
-        |   |   |-- NotificationTemplate.vue
-        |   |-- Profile
-        |       |-- EditProfileForm.vue
-        |       |-- UserCard.vue
-        |-- plugins
-        |   |-- RTLPlugin.js
-        |   |-- blackDashboard.js
-        |   |-- globalComponents.js
-        |   |-- globalDirectives.js
-        |   |-- liveDemo.js
-        |-- router
-            |-- index.js
-            |-- routes.js
-
-```
 
 
 ## Browser Support
